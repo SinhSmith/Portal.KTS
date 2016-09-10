@@ -1,183 +1,152 @@
-﻿<div class="footer-container">
-    <footer id="footer" class="container">
+﻿<footer>
+
+    <div class="container">
         <div class="row">
-            <section class="blockcategories_footer footer-block col-xs-12 col-sm-3">
-                <h4>Danh mục</h4>
-                <div class="category_footer toggle-footer" style="">
-                    <div class="list">
-                        <ul class="tree dhtml">
-                            <li>
-                                <a href="/Product/GetProductByCategory/8" title="Đồ kim loại">
-                                    Đồ kim loại
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/Product/GetProductByCategory/9" title="Đồng hồ">
-                                    Đồng hồ
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/Product/GetProductByCategory/10" title="Hoa giả, hoa khô, cỏ khô">
-                                    Hoa giả, hoa khô, cỏ khô
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/Product/GetProductByCategory/11" title="Hoa nhỏ Xavia">
-                                    Hoa nhỏ Xavia
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/Product/GetProductByCategory/12" title="Khung ảnh">
-                                    Khung ảnh
-                                </a>
-                            </li>
-                            @*<li>
-                                    <a href="/Product/GetProductByCategory/13" title="Set hoa cắm sẵn">
-                                        Set hoa cắm sẵn
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="title">
+                    <h3>Công ty thành viên</h3>
+                </div>
+                <div id="owl-demo2" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
+                    <div class="owl-wrapper-outer">
+                        <div class="owl-wrapper" style="width: 666px; left: 0px; display: block;">
+                            <div class="owl-item" style="width: 111px;">
+                                <div class="item col-xs-11" style="padding:0px 7px;">
+                                    <a href="http://unicons.com.vn/" target="_blank">
+                                        <img src="~/Content/Images/Unicons_Logo_27062016.jpg" alt="Unicons">
                                     </a>
-                                </li>*@
-                            @*<li>
-                                    <a href="/Product/GetProductByCategory/14" title="Tinh dầu">
-                                        Tinh dầu
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 111px;">
+                                <div class="item col-xs-11" style="padding:0px 7px;">
+                                    <a href="http://www.ricons.vn/" target="_blank">
+                                        <img src="~/Content/Images/logo2.jpg" alt="Ricons">
                                     </a>
-                                </li>*@
-                            <li>
-                                <a href="/Product/GetProductByCategory/15" title="Tranh treo tường">
-                                    Tranh treo tường
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/Product/GetProductByCategory/16" title="Tượng Composite">
-                                    Tượng Composite
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <section class="footer-block col-xs-12 col-sm-3" id="block_various_links_footer">
-                <h4>Thông tin</h4>
-                <ul class="toggle-footer" style="">
-                    <li class="item">
-                        <a href="/News/Index/2" title="Thông tin khuyến mãi">
-                            Thông tin khuyến mãi
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="/Product/SearchProduct?searchString=&searchType=3" title="Sản phẩm mới">
-                            Sản phẩm mới
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="/Product/SearchProduct?searchString=&searchType=4" title="Sản phẩm Hot">
-                            Sản phẩm Hot
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="@Url.Action("About", "Home")" title="Về chúng tôi">
-                            Về chúng tôi
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="@Url.Action("Contact", "Home")" title="Liên hệ">
-                            Liên hệ
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/tin-tuc" title="Tin tức">
-                            Tin tức
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/blog" title="Blog">
-                            Blog
-                        </a>
-                    </li>
-                </ul>
-            </section>
-            <div class="bottom-footer col-xs-12">
-                <div>
-                    © <span class="current-year">@DateTime.Now.Year.ToString()</span> <a class="_blank" title="prestashop" href="/" target="_blank">Copyright by XAVIADECOR™</a>
-                    | Tổng lượt truy cập: @(Convert.ToInt32(ApplicationInstance.Application["TotalVisitors"].ToString()).ToString("N0"))
-                </div>
-            </div>
-            @*<section class="footer-block col-xs-12 col-sm-2">
-                    <h4>
-                        <a href="#" title="Manage my customer account" rel="nofollow">Tài khoản</a>
-                    </h4>
-                    <div class="block_content toggle-footer" style="">
-                        <ul class="bullet">
-                            <li>
-                                <a href="#" title="My orders" rel="nofollow">Đơn đặt hàng</a>
-                            </li>
-                            <li>
-                                <a href="#" title="My merchandise returns" rel="nofollow">Địa chỉ</a>
-                            </li>
-                            <li>
-                                <a href="#" title="My credit slips" rel="nofollow">Thông tin cá nhân</a>
-                            </li>
-                        </ul>
-                    </div>
-                </section>*@
-            <section id="block_contact_infos" class="footer-block col-xs-12 col-sm-3">
-                <div>
-                    <h4>Liên hệ</h4>
-                    <ul class="toggle-footer" style="">
-                        <li>
-                            <strong style="color:#630a34">Cửa hàng nội thất Xavia</strong>
-                        </li>
-                        <li style="color:#630a34">
-                            Địa chỉ: 144 Phan Châu Trinh, TP.Đà Nẵng
-                        </li>
-                        <li style="color:#630a34">
-                            Tel:
-                            <span>0905 179 575</span> -
-                            <span>0905 245 001</span>
-                        </li>
-                        <li>
-                            <span><a href="mailto:xaviadecor144@gmail.com">xaviadecor144@gmail.com</a></span>
-                        </li>
-                        <li>
-                            <span><a href="https://www.facebook.com/xaviadecordanang/" target="_blank">Facebook.com/xavia-decor</a></span>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <div id="newsletter_block_left" class="footer-block col-xs-12 col-sm-3">
-                <h4>Nhận thông báo</h4>
-                <div class="block_content">
-                    <form action="#" method="post">
-                        <div class="form-group">
-                            <input class="inputNew form-control grey newsletter-input" id="newsletter-input" type="text" name="email" size="18" placeholder="Nhập email của bạn">
-                            <button type="submit" name="submitNewsletter" class="btn btn-default btn-sm">
-                                <span>Đăng ký</span>
-                            </button>
-                            <input type="hidden" name="action" value="0">
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 111px;">
+                                <div class="item col-xs-11" style="padding:0px 7px;">
+                                    <img src="~/Content/Images/logo3.jpg" alt="FCC">
+                                </div>
+                            </div>
                         </div>
-                    </form>
+                    </div>
+                    <div class="owl-controls clickable" style="display: none;">
+                        <div class="owl-pagination">
+                            <div class="owl-page">
+                                <span class=""></span>
+                            </div>
+                        </div>
+                        <div class="owl-buttons">
+                            <div class="owl-prev">
+                                <img src="~/Content/Images/icon1.jpg">
+                            </div>
+                            <div class="owl-next">
+                                <img src="~/Content/Images/icon2.jpg">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <section id="social_block">
-                    <ul>
-                        <li class="facebook">
-                            <a target="_blank" style="color:#630a34 !important" href="https://www.facebook.com/xaviadecordanang/" title="Facebook">
-                                <span>Facebook</span>
-                            </a>
-                        </li>
-                        <li class="twitter">
-                            <a target="_blank" style="color:#630a34 !important" href="https://www.twitter.com/xavia-decor" title="Twitter">
-                                <span>Twitter</span>
-                            </a>
-                        </li>
-                        <li class="google-plus">
-                            <a target="_blank" style="color:#630a34 !important" href="https://www.google.com/+xavia-decor" title="Google Plus">
-                                <span>Google Plus</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <h4>Follow us</h4>
-                </section>
             </div>
-            <div class="clearfix"></div>
+            <div class="col-xs-12 col-sm-6 col-md-6 os-tuyendart w3danima">
+                <div class="title">
+                    <h3><p>Đối tác chiến lược</p></h3>
+                </div>
+                <div id="owl-demo3" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
+                    <div class="owl-wrapper-outer">
+                        <div class="owl-wrapper" style="width: 222px; left: 0px; display: block;">
+                            <div class="owl-item" style="width: 111px;">
+                                <div class="item col-xs-11" style="padding:0px 7px;">
+                                    <img src="~/Content/Images/Logo-Kusto.jpg" alt="Kustocem Pte. Ltd">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="owl-controls clickable" style="display: none;">
+                        <div class="owl-pagination">
+                            <div class="owl-page">
+                                <span class=""></span>
+                            </div>
+                        </div>
+                        <div class="owl-buttons">
+                            <div class="owl-prev">
+                                <img src="~/Content/Images/icon1.jpg">
+                            </div>
+                            <div class="owl-next">
+                                <img src="~/Content/Images/icon2.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
+    <div class="container">
+        <div class="col-xs-12 bgopa">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <h4>Thông tin công ty</h4>
+                    <div class="menu-footer-1-container">
+                        <ul id="menu-footer-1" class="list">
+                            <li id="menu-item-186" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-186"><a href="http://www.coteccons.vn/tong-quan-cong-ty/">Tổng quan công ty</a></li>
+                            <li id="menu-item-187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-187"><a href="http://www.coteccons.vn/co-cau-to-chuc/">Cơ cấu tổ chức</a></li>
+                            <li id="menu-item-188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188"><a href="http://www.coteccons.vn/can-bo-chu-chot/">Cán bộ chủ chốt</a></li>
+                            <li id="menu-item-189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-189"><a href="http://www.coteccons.vn/chinh-sach-nhan-su/">Chính sách nhân sự</a></li>
+                            <li id="menu-item-190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-190"><a href="http://www.coteccons.vn/nhung-cai-tien-trong-co-cau-to-chuc/">Những cải tiến trong tổ chức</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <h4>Quan hệ cổ đông</h4>
+                    <div class="menu-footer-2-container">
+                        <ul id="menu-footer-2" class="list">
+                            <li id="menu-item-192" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-192"><a href="http://www.coteccons.vn/quan-he-co-dong/thong-tin-co-dong/">Thông tin Cổ đông</a></li>
+                            <li id="menu-item-191" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-191"><a href="http://www.coteccons.vn/quan-he-co-dong/bao-cao-tai-chinh-thuong-nien/">Báo cáo tài chính – thường niên</a></li>
+                            <li id="menu-item-193" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-193"><a href="http://www.coteccons.vn/quan-he-co-dong/bien-ban-nghi-quyet/">Biên bản và nghị quyết</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-2">
+
+                    <h4><img src="~/Content/Images/stock.jpg" style="height:18px;" alt="stock"> &nbsp; CTD</h4>
+                    <div style="color:#fff; padding-left:30px;">
+                        <strong style="font-size:36px;">258.0</strong> <span><img src="~/Content/Images/green.jpg" alt="CTD"></span>
+                    </div>
+                    <div style="color:#fff; padding-left:10px;">
+                        <br> &nbsp; 1.0 (0.4%)                         <br> 15:15 - 07/09/2016
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h4>Liên hệ</h4>
+                    <div class="some-content-related-div">
+                        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 120px;">
+                            <div id="inner-content-div" style="overflow: hidden; width: auto; height: 120px;">
+                                <h5>Văn phòng Chính:</h5><ul class="list-f lienhe-f"><li>Tòa nhà Coteccons, 236/6 Điện Biên Phủ, P.17, Q.Bình Thạnh, Tp.HCM.</li><li>84.8-35142255/66 - 84.8-35142277</li><li><strong>Email:</strong> <a href="mailto:contact@coteccons.vn">contact@coteccons.vn</a></li></ul><h5>Văn phòng Đại Diện:</h5><ul class="list-f lienhe-f"><li>Tầng 5, Tòa nhà Starcity, 81 Lê Văn Lương, Nhân Chính, Thanh Xuân, HN.</li><li>84.4-37834851 - 84.4-37834850</li><li><strong>Email:</strong> <a href="mailto:contacthn@coteccons.vn">contacthn@coteccons.vn</a></li></ul>
+                            </div><div class="slimScrollBar" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 49.3151px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<section class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <p class="text-left"><span>Copyright © 2016 Powered by <strong>COTECCONS</strong> Group.</span> Design by <a href="#" target="_blank" style="color:#333;">HTK Co</a></p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="text-right">
+                    <a href="#" target="_blank"><img src="~/Content/Images/portal.png" alt="portal"></a> &nbsp;
+                    <a href="#" target="_blank"><img src="~/Content/Images/email-icon.png" alt="Webmail Coteccons"></a> &nbsp;
+                    <a href="https://www.youtube.com/watch?v=dX1HeayFxww&amp;feature=youtu.be" target="_blank"><img class="alignnone wp-image-549 size-full" src="~/Content/Images/yt.jpg" alt="yt"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="sub_top" style="display: none;">
+    <a href="Home/Index">
+        <img src="~/Content/Images/btn_top_off.png" alt="top">
+    </a>
 </div>

@@ -1,77 +1,78 @@
 ﻿@using Microsoft.AspNet.Identity
 
-<div class="header-container">
-    <header id="header">
-        <div class="nav">
-            <div class="container">
-                <div class="row">
-                    <div id="header_logo">
-                        <a href="/" title="Xavia Decor">
-                            <img class="logo img-responsive" src="~/Content/Images/Banners/XaviaLogo.jpg" title="Xavia Decor" alt="Xavia Decor" width="270" height="151">
-                        </a>
+<section class="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-2">
+                <div class="logo os-tuyendart w3danima">
+                    <a href="/Home/Index"><img src="/Content/Images/logo.png" alt="Logo CotecCons"></a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-5 col-md-6">
+                <div class="row os-tuyendart w3danima">
+                    <h2 class="slogan">OUR EXPERIENCE DRIVES US FORWARD</h2>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-xs-12 col-sm-3 col-md-3">
+                <div class="search">
+                    <div class="bsearch">
+
+                        <form role="search" method="get" class="search-form" action="http://www.coteccons.vn/">
+                            <input type="search" class="input-sm" maxlength="64" placeholder="Tìm kiếm …" value="" name="s" title="Tìm kiếm">
+                            <button type="submit" class="btn btn-primary btn-sm">Tìm kiếm</button>
+                        </form>
+                        <br clear="all">
                     </div>
-                    <nav>
-                        <ul id="header_links">
-                            @*<li id="header_link_home">
-                                <a class="active" href="/" title="home">Trang chủ</a>
-                            </li>
-                            <li id="header_link_contact">
-                                <a href="@Url.Action("About", "Home")" title="contact">Giới thiệu</a>
-                            </li>
-                            <li id="header_link_blog">
-                                <a href="@Url.Action("Index", "News", new { id = 1 })" title="news">Tin tức</a>
-                            </li>
-                            <li id="header_link_blog">
-                                <a href="@Url.Action("Index", "News", new { id = 5 })" title="blog">Blog</a>
-                            </li>
-                            <li id="header_link_contact">
-                                <a href="@Url.Action("Contact", "Home")" title="contact">Liên hệ</a>
-                            </li>*@
-
-                            <li id="header_link_home">
-                                <a title="Địa chỉ"><span class="active glyphicon glyphicon-earphone" style="top:3px;margin-right:3px;" title="Điện thoại"></span><span style="font-size:18px;font-weight:600;font-family: initial;">0905 197 575</span></a>
-                            </li>
-                            <li id="header_link_contact">
-                                <a title="Địa chỉ"><span class="glyphicon glyphicon-map-marker" style="top:3px;margin-right:2px;"></span><span style="font-size:18px;font-weight:600;font-family: initial;">144 Phan Châu Trinh, Đà Nẵng</span></a>
-                            </li>
-                        </ul>
-
-                        <div id="header-login">
-                            @*<div class="header_user_info">
-                                @if (Request.IsAuthenticated)
-                                {
-                                    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-                                    {
-                                        @Html.AntiForgeryToken()
-
-                                        <ul class="nav navbar-nav navbar-right" style="margin-right: 0px !important;">
-                                            <li>
-                                                @Html.ActionLink("Xin chào " + User.Identity.GetUserName() + ", ", "ChangePassword", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-                                            </li>
-                                            <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="glyphicon glyphicon-log-out"></i> Thoát</a></li>
-                                        </ul>
-                                    }
-                                }
-                                else
-                                {
-                                    <a href="/Account/Register">Đăng ký</a>
-                                    <span>|</span>
-                                    <a href="/Account/Login">Đăng nhập</a>
-                                }
-                            </div>*@
-                        </div>
-                        
-                        <div id="tmsearch" class="clearfix">
-                            <div id="tmsearchbox">
-                                <input class="tm_search_query font-size-child-menu form-control ac_input" type="text" id="tm_search_query" name="search_query" placeholder="Bạn cần tìm gì?" value="" autocomplete="off">
-                                <button id="SearchProduct_Btn" name="tm_submit_search" class="btn btn-default button-search">
-                                    <span>Search</span>
-                                </button>
-                            </div>
-                        </div>
-                    </nav>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</section>
+<div class="sidebar-sticky" style="display: block; height: 43px; width: auto; margin: auto; position: relative; float: none; left: auto; right: auto; top: auto; bottom: auto; vertical-align: top;">
+    <section class="nav" id="menu" style="width: 1349px; top: 0px; bottom: auto; left: 0px; right: auto; position: absolute;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="navbar">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="active "><a href="Home/Index">Trang chủ </a></li>
+                                <li class="dropdown "><a href="http://www.coteccons.vn/#" class="dropdown-toggle" data-toggle="dropdown">Giới thiệu <b class="caret"></b></a><ul class="dropdown-menu"><li class=""><a href="http://www.coteccons.vn/tong-quan-cong-ty/">Tổng quan công ty</a></li><li class=""><a href="http://www.coteccons.vn/can-bo-chu-chot/">Cán bộ chủ chốt</a></li><li class=""><a href="http://www.coteccons.vn/co-cau-to-chuc/">Cơ cấu tổ chức</a></li><li class=""><a href="http://www.coteccons.vn/thu-danh-gia/">Thư đánh giá</a></li><li class=""><a href="http://www.coteccons.vn/khach-hang-doi-tac/">Khách hàng và Đối tác</a></li><li class=""><a href="http://www.coteccons.vn/chung-chi-iso/">Chứng Chỉ ISO</a></li><li class=""><a href="http://www.coteccons.vn/an-toan-lao-dong/">Chính sách an toàn sức khỏe - nghề nghiệp và môi trường</a></li><li class=""><a href="http://www.coteccons.vn/chinh-sach-nhan-su/">Chính sách nhân sự</a></li><li class=""><a href="http://www.coteccons.vn/nang-luc-thiet-bi-thi-cong/">Năng lực thiết bị thi công</a></li><li class=""><a href="http://www.coteccons.vn/nhung-cai-tien-trong-co-cau-to-chuc/">Những cải tiến trong cơ cấu tổ chức</a></li></ul></li>
+                                <li class="dropdown "><a href="http://www.coteccons.vn/thong-tin/" class="dropdown-toggle" data-toggle="dropdown">Tin tức <b class="caret"></b></a><ul class="dropdown-menu"><li class=""><a href="/News/Index">Tin Công Ty</a></li><li class=""><a href="http://www.coteccons.vn/thong-tin/tin-cong-trinh/">Tin Công Trình</a></li><li class=""><a href="http://www.coteccons.vn/thong-tin/tin-doan-the/">Tin Đoàn thể</a></li><li class=""><a href="http://www.coteccons.vn/thong-tin/tin-thi-truong/">Tin Thị Trường</a></li><li class=""><a href="http://www.coteccons.vn/thong-tin/">Xem tất cả</a></li></ul></li>
+                                <li class="dropdown "><a href="http://www.coteccons.vn/quan-he-co-dong/" class="dropdown-toggle" data-toggle="dropdown">Quan hệ cổ đông <b class="caret"></b></a><ul class="dropdown-menu"><li class=""><a href="http://www.coteccons.vn/quan-he-co-dong/thong-tin-co-dong/">Thông tin Cổ đông</a></li><li class=""><a href="http://www.coteccons.vn/quan-he-co-dong/bao-cao-tai-chinh-thuong-nien/">Báo cáo tài chính - thường niên</a></li><li class=""><a href="http://www.coteccons.vn/quan-he-co-dong/bien-ban-nghi-quyet/">Biên bản và nghị quyết</a></li><li class=""><a href="http://www.coteccons.vn/quan-he-co-dong/dieu-le-quy-che-quy-dinh/">Điều lệ và quy chế qui định</a></li></ul></li>
+                                <li class="dropdown mega-dropdown">
+                                    <a href="http://www.coteccons.vn/#" class="dropdown-toggle" data-toggle="dropdown">Dự án <b class="caret"></b></a><ul class="dropdown-menu mega-dropdown-menu row">
+                                        <li class="col-sm-3">
+                                            <ul><li class="dropdown-header">Theo Dự Án</li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/thiet-ke-va-thi-cong/">Thiết kế và thi công</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/dan-dung/">Dân dụng</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/cong-nghiep/">Công Nghiệp</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/ha-tang/">Hạ tầng</a></li></ul>
+                                        </li>
+                                        <li class="col-sm-3">
+                                            <ul><li class="dropdown-header">Theo Thời Gian</li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/?y=2016">2016</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/?y=2015">2015</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/?y=2014">2014</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/?y=2013">2013</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/?y=2012">2012</a></li><li class="mn_custom_sub" style="display: none;"><a href="http://www.coteccons.vn/du-an/?y=2011">2011</a></li><li class="mn_custom_sub" style="display: none;"><a href="http://www.coteccons.vn/du-an/?y=2010">2010</a></li><li class="mn_custom_sub" style="display: none;"><a href="http://www.coteccons.vn/du-an/?y=2009">2009</a></li><li class="mn_custom_sub" style="display: none;"><a href="http://www.coteccons.vn/du-an/?y=2008">2008</a></li><li class="mn_custom_sub" style="display: none;"><a href="http://www.coteccons.vn/du-an/?y=2007">2007</a></li><li class="mn_custom_sub" style="display: none;"><a href="http://www.coteccons.vn/du-an/?y=2006">2006</a></li><li class="mn_custom_sub" style="display: none;"><a href="http://www.coteccons.vn/du-an/?y=2005">2005</a></li><li class="mn_custom_sub" style="display: none;"><a href="http://www.coteccons.vn/du-an/?y=2004">2004</a></li><li class="mn_custom_sub" style="display: none;"><a href="http://www.coteccons.vn/du-an/?y=2003">2003</a></li><li class="mn_custom_sub"><a href="javascript:void(0);">Xem thêm...</a></li></ul>
+                                        </li>
+                                        <li class="col-sm-3">
+                                            <ul><li class="dropdown-header">Theo Vị Trí</li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/mien-bac/">Miền Bắc</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/mien-trung/">Miền Trung</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/mien-nam/">Miền Nam</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/ngoai-nuoc/">Ngoài nước</a></li></ul>
+                                        </li>
+                                        <li class="col-sm-3">
+                                            <ul><li class="dropdown-header">Theo tiến độ</li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/da-thi-cong/">Đã thi công</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/dang-thi-cong/">Đang thi công</a></li></ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class=" "><a href="http://www.coteccons.vn/bat-dong-san/">Bất động sản </a></li>
+                                <li class=" "><a href="http://www.coteccons.vn/tai-lieu/">Tài liệu </a></li>
+                                <li class=" "><a href="http://www.coteccons.vn/tuyen-dung/">Tuyển dụng </a></li>
+                                <li class=" "><a href="/Home/About">Liên hệ </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>

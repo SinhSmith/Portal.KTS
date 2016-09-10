@@ -1,159 +1,129 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Xavia Decor</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="content-language" content="vi" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Description" content="Xavia Decor là của hàng kinh doanh các sản phẩm trang trí nội thất nhập khẩu và nội địa có chất lượng cao, hoạt động từ cuối năm 2015. Trong suổt thời gian hoạt động từ khi thành lập, Cửa hàng chúng tôi đã nỗ lực không ngừng để có sự tăng trưởng liên tục và thành tích kinh doanh ấn tượng. Đến nay, Xavia Décor đã thực sự trở thành nhà cung cấp các sản phẩm trang trí nội thất hàng đầu với các thương hiệu sản phẩm uy tính với người tiêu dùng.">
-    <meta name="Keywords" content="xavia, trang trí nội thất, nội thất, đồ trang trí nội thất, trang tri noi that, noi that, do trang tri noi that">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://xaviadecor.com">
-    <meta property="og:title" content="Xavia Decor - Chuyên cung cấp đồ trang trí nội thất cao cấp">
-    <meta property="og:image" content="http://xaviadecor.com/Content/Images/Banners/XaviaLogo.png">
-    <meta property="og:site_name" content="Xavia Decor">
-    <meta property="og:description" content="Xavia Decor - Chuyên cung cấp đồ trang trí nội thất cao cấp">
-    <meta name="robots" content="index, follow">
-    <meta name="googlebot" content="index, follow">
-    <link rel="icon" type="image/ico" href="~/Content/Images/Banners/faviorIcon.jpg">
-    
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-
-    @Styles.Render("~/Content/bootstrap")
-    <link href="~/Content/common.css" rel="stylesheet" />
-
-    <link rel="stylesheet" href="~/Content/bootstrap.min.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/global.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/highdpi.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/responsive-tables.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/uniform.default.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/jquery.fancybox.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/product_list.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/blockcart.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/jquery.bxslider.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/blockcategories.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/blockcurrencies.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/blocklanguages.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/blocknewsletter.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/blocktags.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/blockviewed.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/homeslider.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/hooks.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/blockwishlist.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/productcomments.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/blockpermanentlinks.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/smartblogstyle.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/smartbloglatestnews.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/smartblogtags.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/front.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/tmmegamenu.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/tmnewsletter.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/tmproductvideos.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/tmrelatedproducts.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/tmsearch.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/jquery.autocomplete.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/front(1).css" media="all">
-    <link rel="stylesheet" href="~/Content/css/front(2).css" media="all">
-    <link rel="stylesheet" href="~/Content/css/live_configurator.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/themeconfiglink.css" media="all">
-    <link rel="stylesheet" href="~/Content/css/cms.css" />
-    <link rel="stylesheet" href="~/Content/css/category.css" />
-    <link rel="stylesheet" href="~/Content/css/jquery.ui.slider.css" />
-    <link rel="stylesheet" href="~/Content/css/jquery.ui.theme.css" />
-    <link rel="stylesheet" href="~/Content/css/blocklayered.css" />
-    <link rel="stylesheet" href="~/Content/css/css.css" type="text/css" media="all">
-    <link rel="stylesheet" href="~/Content/css/css(1).css" type="text/css">
-    <link rel="stylesheet" href="~/Content/css/css(2).css" type="text/css">
-    <link id="habla_style_div" type="text/css" rel="stylesheet" href="~/Content/css/cbb092d6554938a9549cb716ffcb1f94.css">
-    <link href="~/Content/css/contact-form.css" rel="stylesheet" />
-
-    <script type="text/javascript" src="~/Scripts/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/jquery.easing.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/tools.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/global.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/10-bootstrap.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/14-device.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/15-jquery.total-storage.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/16-jquery.scrollmagic.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/17-jquery.scrollmagic.debug.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/18-TimelineMax.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/19-TweenMax.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/jquery.fittext.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/jquery.fancybox.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/products-comparison.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/ajax-cart.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/jquery.scrollTo.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/jquery.serialScroll.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/jquery.bxslider.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/treeManagement.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/blocknewsletter.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/homeslider.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/ajax-wishlist.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/validate.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/front.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/hoverIntent.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/superfish.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/tmmegamenu.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/tmrelatedproducts.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/jquery.autocomplete.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/tmsearch.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/front(3).js"></script>
-    <script type="text/javascript" src="~/Scripts/js/front(4).js"></script>
-    <script type="text/javascript" src="~/Scripts/js/index.js"></script>
-    <script src="~/Content/plugins/spin/spin.min.js"></script>
-
-    <link rel="stylesheet" href="~/Content/css/site.css" type="text/css" media="all">
-    <link href="~/Content/css/site1.css" rel="stylesheet" type="text/css">
-    <link href="~/Content/css/site2.css" rel="stylesheet" type="text/css">
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css">
-    <!--[if IE 8]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-            <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>(function (html) { html.className = html.className.replace(/\bno-js\b/, 'js') })(document.documentElement);</script>
+    <title>Coteccons – Our Experience drives us forward</title>
     <script type="text/javascript">
-        var FancyboxI18nClose = 'Close';
-        var FancyboxI18nNext = 'Next';
-        var FancyboxI18nPrev = 'Previous';
-        var homeslider_loop = 1;
-        var homeslider_pause = 6000;
-        var homeslider_speed = 800;
-        var homeslider_width = 10000;
-        window.$zopim || (function (d, s) {
-            var z = $zopim = function (c) { z._.push(c) }, $ = z.s =
-    d.createElement(s), e = d.getElementsByTagName(s)[0]; z.set = function (o) {
-        z.set.
-        _.push(o)
-    }; z._ = []; z.set._ = []; $.async = !0; $.setAttribute("charset", "utf-8");
-            $.src = "//v2.zopim.com/?44aDRKdTeAi0CLA4pcI782rgMIYF91xZ"; z.t = +new Date; $.
-            type = "text/javascript"; e.parentNode.insertBefore($, e)
-        })(document, "script");
-
-        $(document).ready(function () {
-            $("#to_top").click(function () { $("body,html").animate({ scrollTop: 0 }, "normal") })
-        });
-
+        window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/72x72\/", "ext": ".png", "source": { "concatemoji": "http:\/\/www.coteccons.vn\/includes\/js\/wp-emoji-release.min.js?ver=4.4.2" } };
+        !function (a, b, c) { function d(a) { var c, d = b.createElement("canvas"), e = d.getContext && d.getContext("2d"), f = String.fromCharCode; return e && e.fillText ? (e.textBaseline = "top", e.font = "600 32px Arial", "flag" === a ? (e.fillText(f(55356, 56806, 55356, 56826), 0, 0), d.toDataURL().length > 3e3) : "diversity" === a ? (e.fillText(f(55356, 57221), 0, 0), c = e.getImageData(16, 16, 1, 1).data.toString(), e.fillText(f(55356, 57221, 55356, 57343), 0, 0), c !== e.getImageData(16, 16, 1, 1).data.toString()) : ("simple" === a ? e.fillText(f(55357, 56835), 0, 0) : e.fillText(f(55356, 57135), 0, 0), 0 !== e.getImageData(16, 16, 1, 1).data[0])) : !1 } function e(a) { var c = b.createElement("script"); c.src = a, c.type = "text/javascript", b.getElementsByTagName("head")[0].appendChild(c) } var f, g; c.supports = { simple: d("simple"), flag: d("flag"), unicode8: d("unicode8"), diversity: d("diversity") }, c.DOMReady = !1, c.readyCallback = function () { c.DOMReady = !0 }, c.supports.simple && c.supports.flag && c.supports.unicode8 && c.supports.diversity || (g = function () { c.readyCallback() }, b.addEventListener ? (b.addEventListener("DOMContentLoaded", g, !1), a.addEventListener("load", g, !1)) : (a.attachEvent("onload", g), b.attachEvent("onreadystatechange", function () { "complete" === b.readyState && c.readyCallback() })), f = c.source || {}, f.concatemoji ? e(f.concatemoji) : f.wpemoji && f.twemoji && (e(f.twemoji), e(f.wpemoji))) }(window, document, window._wpemojiSettings);
     </script>
+    <script src="~/Scripts/home/wp-emoji-release.min.js"></script>
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+
+    <link href="~/Content/common/frontend.css" rel="stylesheet" />
+    <link href="~/Content/home/styles.css" rel="stylesheet" />
+
+    <!--[if lt IE 10]>
+    <link rel='stylesheet' id='cotec-ie-css'  href='http://www.coteccons.vn/template/css/ie.css?ver=20150930' type='text/css' media='all' />
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='cotec-ie8-css'  href='http://www.coteccons.vn/template/css/ie8.css?ver=20151230' type='text/css' media='all' />
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel='stylesheet' id='cotec-ie7-css'  href='http://www.coteccons.vn/template/css/ie7.css?ver=20150930' type='text/css' media='all' />
+    <![endif]-->
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/home/jquery-migrate.min.js"></script>
+    <script src="~/Scripts/home/front.js"></script>
+    <script src="~/Scripts/home/chosen.jquery.min.js"></script>
+    <!--[if lt IE 9]>
+    <script type='text/javascript' src='http://www.coteccons.vn/template/js/html5.js?ver=3.7.3'></script>
+    <![endif]-->
+    <link rel="https://api.w.org/" href="http://www.coteccons.vn/wp-json/">
+    <script>
+        var wpdm_site_url = 'http://www.coteccons.vn/';
+        var wpdm_home_url = 'http://www.coteccons.vn/';
+        var ajax_url = 'http://www.coteccons.vn/ajax';
+    </script>
+
+    <style type="text/css">
+        .qtranxs_flag_vi {
+            background-image: url(http://www.coteccons.vn/app/plugins/qtranslate-x/flags/vn.png);
+            background-repeat: no-repeat;
+        }
+
+        .qtranxs_flag_en {
+            background-image: url(http://www.coteccons.vn/app/plugins/qtranslate-x/flags/gb.png);
+            background-repeat: no-repeat;
+        }
+
+        .qtranxs_flag_zh {
+            background-image: url(http://www.coteccons.vn/app/plugins/qtranslate-x/flags/cn.png);
+            background-repeat: no-repeat;
+        }
+
+        .qtranxs_flag_ja {
+            background-image: url(http://www.coteccons.vn/app/plugins/qtranslate-x/flags/jp.png);
+            background-repeat: no-repeat;
+        }
+    </style>
+    <link hreflang="vi" href="http://www.coteccons.vn/?lang=vi" rel="alternate">
+    <link hreflang="en" href="http://www.coteccons.vn/?lang=en" rel="alternate">
+    <link hreflang="zh" href="http://www.coteccons.vn/?lang=zh" rel="alternate">
+    <link hreflang="ja" href="http://www.coteccons.vn/?lang=ja" rel="alternate">
+    <link hreflang="x-default" href="http://www.coteccons.vn/" rel="alternate">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+
+    <!--<base href="http://www.coteccons.vn/">-->
+    <base href=".">
+    <link rel="shortcut icon" href="http://www.coteccons.vn/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://www.coteccons.vn/favicon.ico" type="image/x-icon">
+    <link href="~/Content/home/main-layout.css" rel="stylesheet" />
+    <link href="~/Content/common/custom.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/common/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Content/common/owl.theme.css" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
-<body id="index" class="index hide-left-column hide-right-column lang_en one-column">
-    <div id="page">
-        @Html.Action("_HeaderPartial", "Home")
+<body>
+    @Html.Action("_HeaderPartial", "Home")
+    @RenderBody()
+    @RenderPage("_FooterPartial.cshtml")
 
-        <div class="columns-container">
-            @RenderBody()
-        </div>
+    @RenderSection("LocalStyles",required:false)
+    <script src="~/Scripts/home/jquery.form.min.js"></script>
 
-        @RenderPage("_FooterPartial.cshtml")
-    </div>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var _wpcf7 = { "loaderUrl": "http:\/\/www.coteccons.vn\/app\/plugins\/contact-form-7\/images\/ajax-loader.gif", "recaptchaEmpty": "Please verify that you are not a robot.", "sending": "\u0110ang g\u1eedi ..." };
+        /* ]]> */
+    </script>
 
-    <a href="javascript:;" id="to_top">
-        <img src="/Content/Images/icon_gototop.png" title="Xavia Decor" alt="Xavia Decor - Chuyên cung cấp đồ trang trí nội thất cao cấp">
-    </a>
+    <script src="~/Scripts/home/scripts.js"></script>
+    <script src="~/Scripts/home/skip-link-focus-fix.js"></script>
+    <script src="~/Scripts/home/wp-embed.min.js"></script>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/home/w3danima.js"></script>
+    <script src="~/Scripts/home/owl.carousel.js"></script>
+    <script src="~/Scripts/home/jquerys.min.js"></script>
+    <script src="~/Scripts/home/jquery-ui.js"></script>
+    <script src="~/Scripts/home/jquery.slimscroll.min.js"></script>
+    <script src="~/Scripts/home/jquery.hc-sticky.js"></script>
+    @RenderSection("LocalScripts",required:false)
+
 </body>
 </html>
