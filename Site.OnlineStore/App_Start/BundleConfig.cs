@@ -31,6 +31,7 @@ namespace Site.OnlineStore
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/adminScript").Include(
+                        "~/Scripts/admin/common.js",
                         "~/Content/admin/chosen-library/chosen.jquery.min.js",
                         "~/Content/admin/plugins/spin/spin.min.js",
                         "~/Content/admin/plugins/daterangepicker/moment.js",

@@ -26,6 +26,11 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/others")
     @Scripts.Render("~/bundles/adminScript")
+    <script>
+        $(document).ready(function () {
+            $("#Panel_MessageBox").initMessageBox()
+        })
+    </script>
     
 </head>
 <body class="sidebar-mini skin-green">

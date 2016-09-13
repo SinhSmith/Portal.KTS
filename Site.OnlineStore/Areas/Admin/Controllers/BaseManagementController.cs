@@ -47,6 +47,60 @@ namespace Site.OnlineStore.Areas.Admin.Controllers
         }
 
         /// <summary>
+        /// Get list options for Region dropdownlist and assign to Variable in ViewBag of view
+        /// </summary>
+        /// <param name="status"></param>
+        protected virtual void PopulateRegionDropDownList(Define.Region region = Define.Region.North)
+        {
+            IEnumerable<Define.Region> values = Enum.GetValues(typeof(Define.Region)).Cast<Define.Region>();
+            IEnumerable<SelectListItem> items = from value in values
+                                                select new SelectListItem
+                                                {
+                                                    Text = EnumHelper.GetDescriptionFromEnum((Define.Region)value),
+                                                    Value = ((int)value).ToString(),
+                                                    Selected = value == region,
+                                                };
+
+            ViewBag.Region = items;
+        }
+
+        /// <summary>
+        /// Get list options for progress status dropdownlist and assign to Variable in ViewBag of view
+        /// </summary>
+        /// <param name="progressStatus"></param>
+        protected virtual void PopulateProgressStatusDropDownList(Define.ProgressStatus progressStatus = Define.ProgressStatus.InProgress)
+        {
+            IEnumerable<Define.ProgressStatus> values = Enum.GetValues(typeof(Define.ProgressStatus)).Cast<Define.ProgressStatus>();
+            IEnumerable<SelectListItem> items = from value in values
+                                                select new SelectListItem
+                                                {
+                                                    Text = EnumHelper.GetDescriptionFromEnum((Define.ProgressStatus)value),
+                                                    Value = ((int)value).ToString(),
+                                                    Selected = value == progressStatus,
+                                                };
+
+            ViewBag.ProgressStatus = items;
+        }
+
+        /// <summary>
+        /// Get list options for project type dropdownlist and assign to Variable in ViewBag of view
+        /// </summary>
+        /// <param name="projectType"></param>
+        protected virtual void PopulateProjectTypeDropDownList(Define.ProjectType projectType = Define.ProjectType.DesignAndConstruction)
+        {
+            IEnumerable<Define.ProjectType> values = Enum.GetValues(typeof(Define.ProjectType)).Cast<Define.ProjectType>();
+            IEnumerable<SelectListItem> items = from value in values
+                                                select new SelectListItem
+                                                {
+                                                    Text = EnumHelper.GetDescriptionFromEnum((Define.ProjectType)value),
+                                                    Value = ((int)value).ToString(),
+                                                    Selected = value == projectType
+                                                };
+
+            ViewBag.Type = items;
+        }
+
+        /// <summary>
         /// Get list options for banner types dropdownlist and assign to Variable in ViewBag of view
         /// </summary>
         /// <param name="status"></param>

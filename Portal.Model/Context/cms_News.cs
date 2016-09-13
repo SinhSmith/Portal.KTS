@@ -14,6 +14,11 @@ namespace Portal.Model.Context
     
     public partial class cms_News
     {
+        public cms_News()
+        {
+            this.portal_Projects = new HashSet<portal_Projects>();
+        }
+    
         public int Id { get; set; }
         public int CategoryId { get; set; }
         public Nullable<int> CoverImageId { get; set; }
@@ -33,5 +38,6 @@ namespace Portal.Model.Context
     
         public virtual cms_Categories cms_Categories { get; set; }
         public virtual share_Images share_Images { get; set; }
+        public virtual ICollection<portal_Projects> portal_Projects { get; set; }
     }
 }

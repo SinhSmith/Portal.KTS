@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e94e520f8fda4cb1b72195dde21c911d" Name="Diagram1">
+      <Diagram DiagramId="e94e520f8fda4cb1b72195dde21c911d" Name="Diagram1" ZoomLevel="83">
         <EntityTypeShape EntityType="PortalModel.C__MigrationHistory" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PortalModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PortalModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
@@ -24,6 +24,11 @@
         <AssociationConnector Association="PortalModel.FK_cms_News_share_Images" ManuallyRouted="false" />
         <AssociationConnector Association="PortalModel.FK_system_Banners_share_Images" ManuallyRouted="false" />
         <AssociationConnector Association="PortalModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PortalModel.portal_Projects" Width="1.5" PointX="5.25" PointY="11.125" />
+        <AssociationConnector Association="PortalModel.portal_News_Projects" />
+        <AssociationConnector Association="PortalModel.portal_Projects_Images" />
+        <EntityTypeShape EntityType="PortalModel.sysdiagram" Width="1.5" PointX="10.375" PointY="0.75" />
+        <AssociationConnector Association="PortalModel.FK_portal_Projects_share_Images" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

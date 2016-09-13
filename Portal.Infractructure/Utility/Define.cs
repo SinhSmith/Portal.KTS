@@ -57,5 +57,37 @@ namespace Portal.Infractructure.Utility
             [Description("Popup")]
             Popup = 10
         }
+
+        public enum Region
+        {
+            [Description("Miền bắc")]
+            North = 0,
+            [Description("Miền trung")]
+            Central = 1,
+            [Description("Miền nam")]
+            South = 2,
+            [Description("Nước ngoài")]
+            Foreign = 3
+        }
+
+        public enum ProgressStatus
+        {
+            [Description("Đang thi công")]
+            InProgress = 0,
+            [Description("Hoàn thành")]
+            Completed = 1
+        }
+
+        public enum ProjectType
+        {
+            [Description("Thiết kế và thi công")]
+            DesignAndConstruction = 0,
+            [Description("Dân dụng")]
+            CivilEngineering = 1,
+            [Description("Công nghiệp")]
+            Industry = 2,
+            [Description("Hạ tầng")]
+            Infrastructure = 3
+        }
     }
 }

@@ -38,5 +38,7 @@ namespace Portal.Model.Context
         public virtual DbSet<system_Config> system_Config { get; set; }
         public virtual DbSet<system_Menu> system_Menu { get; set; }
         public virtual DbSet<system_Profiles> system_Profiles { get; set; }
+        public virtual DbSet<portal_Projects> portal_Projects { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }
