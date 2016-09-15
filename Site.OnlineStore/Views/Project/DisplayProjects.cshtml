@@ -1,4 +1,6 @@
-﻿@model Portal.Model.MessageModel.GetProjectWithConditionResponse
+﻿@using PagedList.Mvc
+@using PagedList;
+@model IPagedList<Portal.Model.Context.portal_Projects>
 @{
     ViewBag.Title = "Dự án";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -27,13 +29,13 @@
 
                 <div class="title os-tuyendart w3danima">
                     <div class="fleft">
-                        <h3 style="color:#062245;">Thiết kế và thi công</h3>
+                        <h3 style="color:#062245;">@ViewBag.Category</h3>
                     </div>
                     <br clear="all">
                 </div>
 
                 
-                @foreach (var project in Model.Projects)
+                @foreach (var project in Model)
                 {
                     <div class="col-xs-12 col-sm-6 col-md-4 project-box">
                         <div class="pic">
@@ -45,7 +47,6 @@
                                 else
                                 {
                                     <img class="pic-image" src="" alt="@project.Name">
-
                                 }
                             </a>
                         </div>
@@ -53,15 +54,34 @@
                         <h6><a href="/Project/Details/@project.Id">Xem thêm</a></h6>
                     </div>
                 }
-                <br clear="all"><div class="row" id="pagination">
-                    <nav>
-                        <ul class="pagination">
-                            <li class="active"><span>1</span></li>
-                            <li class="after delta-1 tail"><a href="http://www.coteccons.vn/du-an/category/thiet-ke-va-thi-cong/page/2/">2</a></li>
-                            <li class="next"><a href="http://www.coteccons.vn/du-an/category/thiet-ke-va-thi-cong/page/2/">&gt;</a></li>
-                            <li class="last"><a href="http://www.coteccons.vn/du-an/category/thiet-ke-va-thi-cong/page/2/">»</a></li>
-                        </ul>
-                    </nav>
+                <br clear="all">
+                <div class="row" id="pagination">
+                        @switch ((Portal.Infractructure.Utility.Define.CategoryType)ViewBag.CategoryType)
+                        {
+                            case Portal.Infractructure.Utility.Define.CategoryType.All:
+                                {
+                                    @Html.PagedListPager(Model, page => Url.Action("Index", "Project", new { ViewBag.CategoryValue, page, keyword = Request.QueryString["keyword"] }));
+                                                                                                                                                            break;
+                                }
+                            case Portal.Infractructure.Utility.Define.CategoryType.ProgressStatus:
+                                {
+                                    @Html.PagedListPager(Model, page => Url.Action("GetProjectByProgressStatus", "Project", new { ViewBag.CategoryValue, page, keyword = Request.QueryString["keyword"] }));
+                                                                                                                                                                                                          break;
+                                }
+                            case Portal.Infractructure.Utility.Define.CategoryType.Region:
+                                {
+                                    @Html.PagedListPager(Model, page => Url.Action("GetProjectByRegion", "Project", new { ViewBag.CategoryValue, page, keyword = Request.QueryString["keyword"] }));
+                                                                                                                                                                                                  break;
+                                }
+                            case Portal.Infractructure.Utility.Define.CategoryType.ProjectType:
+                                {
+                                    @Html.PagedListPager(Model, page => Url.Action("GetProjectByType", "Project", new {type = ViewBag.CategoryValue, page, keyword = Request.QueryString["keyword"] }));
+                                                                                                                                                                                                break;
+                                }
+                        }
+
+                   
+
                 </div>
             </div>
             <div class="col-xs-12 col-sm-3 col-md-3">

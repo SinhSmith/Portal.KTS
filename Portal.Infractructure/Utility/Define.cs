@@ -9,6 +9,7 @@ namespace Portal.Infractructure.Utility
 {
     public class Define
     {
+        public const int DISPLAY_PROJECT_PAGE_SIZE = 9;
         public const int PAGE_SIZE = 10;
         public const int ID_PAGE_INTRODUCTION = 18;
         public enum SystemConfig
@@ -88,6 +89,13 @@ namespace Portal.Infractructure.Utility
             Industry = 2,
             [Description("Hạ tầng")]
             Infrastructure = 3
+        }
+        public enum CategoryType
+        {
+            All,
+            Region,
+            ProjectType,
+            ProgressStatus
         }
     }
 }

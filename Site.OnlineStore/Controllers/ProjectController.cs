@@ -1,4 +1,6 @@
-﻿using Portal.Infractructure.Utility;
+﻿using PagedList;
+using Portal.Infractructure.Helper;
+using Portal.Infractructure.Utility;
 using Portal.Model.Context;
 using Portal.Model.MessageModel;
 using Portal.Service.Implements;
@@ -31,12 +33,12 @@ namespace Site.OnlineStore.Controllers
 
         #region Actions
 
-        public ActionResult Index(string searchString = "", int Index = 0)
+        public ActionResult Index(string searchString = "", int page = 1)
         {
             GetProjectWithConditionsRequest request = new GetProjectWithConditionsRequest()
             {
-                Index = Index,
-                NumberOfResultsPerPage = productPerPage,
+                Index = page,
+                NumberOfResultsPerPage = Portal.Infractructure.Utility.Define.DISPLAY_PROJECT_PAGE_SIZE,
                 ProgressStatus = null,
                 ProjectType = null,
                 Region = null,
@@ -45,20 +47,21 @@ namespace Site.OnlineStore.Controllers
 
             GetProjectWithConditionResponse response = service.GetAllProjectMatchingConditions(request);
 
-            return View("DisplayProjects", response);
+            IPagedList<portal_Projects> pageProjects = new StaticPagedList<portal_Projects>(response.Projects, page, Portal.Infractructure.Utility.Define.DISPLAY_PROJECT_PAGE_SIZE, response.TotalProjects);
+
+            ViewBag.Category = "All Project";
+            ViewBag.CategoryValue = null;
+            ViewBag.CategoryType = Portal.Infractructure.Utility.Define.CategoryType.All;
+            return View("DisplayProjects", pageProjects);
         }
 
-        public ActionResult GetProjectByType(Define.ProjectType type, string searchString, int Index)
+        public ActionResult GetProjectByType(int? type = null, string searchString = "", int page = 1)
         {
-            if (type != null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
 
             GetProjectWithConditionsRequest request = new GetProjectWithConditionsRequest()
             {
-                Index = Index,
-                NumberOfResultsPerPage = productPerPage,
+                Index = page,
+                NumberOfResultsPerPage = Portal.Infractructure.Utility.Define.DISPLAY_PROJECT_PAGE_SIZE,
                 ProgressStatus = null,
                 ProjectType = type,
                 Region = null,
@@ -67,20 +70,29 @@ namespace Site.OnlineStore.Controllers
 
             GetProjectWithConditionResponse response = service.GetAllProjectMatchingConditions(request);
 
-            return View("DisplayProjects", response);
+            IPagedList<portal_Projects> pageProjects = new StaticPagedList<portal_Projects>(response.Projects, page, Portal.Infractructure.Utility.Define.DISPLAY_PROJECT_PAGE_SIZE, response.TotalProjects);
+
+            if (type!=null)
+            {
+                ViewBag.Category = EnumHelper.GetDescriptionFromEnum((Define.ProjectType)type);
+                ViewBag.CategoryValue = type;
+            }
+            else
+            {
+                ViewBag.Category = "All";
+                ViewBag.CategoryValue = null;
+            }
+            ViewBag.CategoryType = Portal.Infractructure.Utility.Define.CategoryType.ProjectType;
+            return View("DisplayProjects", pageProjects);
         }
 
-        public ActionResult GetProjectByRegion(Define.Region region, string searchString, int Index)
+        public ActionResult GetProjectByRegion(int? region = null, string searchString = "", int page = 1)
         {
-            if (region != null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
 
             GetProjectWithConditionsRequest request = new GetProjectWithConditionsRequest()
             {
-                Index = Index,
-                NumberOfResultsPerPage = productPerPage,
+                Index = page,
+                NumberOfResultsPerPage = Portal.Infractructure.Utility.Define.DISPLAY_PROJECT_PAGE_SIZE,
                 ProgressStatus = null,
                 ProjectType = null,
                 Region = region,
@@ -88,21 +100,28 @@ namespace Site.OnlineStore.Controllers
             };
 
             GetProjectWithConditionResponse response = service.GetAllProjectMatchingConditions(request);
-
-            return View("DisplayProjects", response);
+            IPagedList<portal_Projects> pageProjects = new StaticPagedList<portal_Projects>(response.Projects, page, Portal.Infractructure.Utility.Define.DISPLAY_PROJECT_PAGE_SIZE, response.TotalProjects);
+            if (region != null)
+            {
+                ViewBag.Category = EnumHelper.GetDescriptionFromEnum((Define.Region)region);
+                ViewBag.CategoryValue = region;
+            }
+            else
+            {
+                ViewBag.Category = "All";
+                ViewBag.CategoryValue = null;
+            }
+            ViewBag.CategoryType = Portal.Infractructure.Utility.Define.CategoryType.Region;
+            return View("DisplayProjects", pageProjects);
         }
 
-        public ActionResult GetProjectByProgressStatus(Define.ProgressStatus progressStatus, string searchString, int Index)
+        public ActionResult GetProjectByProgressStatus(int? progressStatus = null, string searchString = "", int page = 1)
         {
-            if (progressStatus != null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
 
             GetProjectWithConditionsRequest request = new GetProjectWithConditionsRequest()
             {
-                Index = Index,
-                NumberOfResultsPerPage = productPerPage,
+                Index = page,
+                NumberOfResultsPerPage = Portal.Infractructure.Utility.Define.DISPLAY_PROJECT_PAGE_SIZE,
                 ProgressStatus = progressStatus,
                 ProjectType = null,
                 Region = null,
@@ -110,8 +129,20 @@ namespace Site.OnlineStore.Controllers
             };
 
             GetProjectWithConditionResponse response = service.GetAllProjectMatchingConditions(request);
+            IPagedList<portal_Projects> pageProjects = new StaticPagedList<portal_Projects>(response.Projects, page, Portal.Infractructure.Utility.Define.DISPLAY_PROJECT_PAGE_SIZE, response.TotalProjects);
+            if (progressStatus != null)
+            {
+                ViewBag.Category = EnumHelper.GetDescriptionFromEnum((Define.ProgressStatus)progressStatus);
+                ViewBag.CategoryValue = progressStatus;
+            }
+            else
+            {
+                ViewBag.Category = "All";
+                ViewBag.CategoryValue = null;
+            }
+            ViewBag.CategoryType = Portal.Infractructure.Utility.Define.CategoryType.ProgressStatus;
 
-            return View("DisplayProjects", response);
+            return View("DisplayProjects", pageProjects);
         }
 
         public ActionResult ProjectDetails(int? id)

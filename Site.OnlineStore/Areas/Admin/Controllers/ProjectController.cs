@@ -105,9 +105,9 @@ namespace Site.OnlineStore.Areas.Admin.Controllers
         public ActionResult Index(string keyword, int page = 1)
         {
             int totalItems = 0;
-            var products = service.GetProjects(page, Portal.Infractructure.Utility.Define.PAGE_SIZE, out totalItems);
+            var projects = service.GetProjects(page, Portal.Infractructure.Utility.Define.PAGE_SIZE, out totalItems);
 
-            IPagedList<ProjectSummaryViewModel> pageProducts = new StaticPagedList<ProjectSummaryViewModel>(products, page, Portal.Infractructure.Utility.Define.PAGE_SIZE, totalItems);
+            IPagedList<ProjectSummaryViewModel> pageProducts = new StaticPagedList<ProjectSummaryViewModel>(projects, page, Portal.Infractructure.Utility.Define.PAGE_SIZE, totalItems);
             return View(pageProducts);
         }
 

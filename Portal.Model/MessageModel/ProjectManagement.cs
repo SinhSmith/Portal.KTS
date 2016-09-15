@@ -20,9 +20,9 @@ namespace Portal.Model.MessageModel
         public int Index { get; set; }
         public int NumberOfResultsPerPage { get; set; }
         public string SearchString { get; set; }
-        public Nullable<Portal.Infractructure.Utility.Define.ProjectType> ProjectType { get; set; }
-        public  Nullable<Portal.Infractructure.Utility.Define.ProgressStatus> ProgressStatus { get; set; }
-        public  Nullable<Portal.Infractructure.Utility.Define.Region> Region { get; set; }
+        public Nullable<int> ProjectType { get; set; }
+        public Nullable<int> ProgressStatus { get; set; }
+        public Nullable<int> Region { get; set; }
      }
 
     public class GetProjectWithConditionResponse
