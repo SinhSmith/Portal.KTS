@@ -14,5 +14,7 @@ namespace Portal.Service.Interfaces
         GetProjectWithConditionResponse GetAllProjectMatchingConditions(GetProjectWithConditionsRequest request);
         IEnumerable<portal_Projects> GetAllProject();
         portal_Projects GetDetailProject(int? projectId);
+        IEnumerable<Model.Context.portal_Projects> GetRelatedProject(int? projectId);
+        IEnumerable<portal_Projects> GetFeaturedProjects(int takenNumber);
     }
 }

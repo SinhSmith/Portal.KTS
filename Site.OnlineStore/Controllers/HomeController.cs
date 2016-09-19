@@ -14,6 +14,7 @@ namespace Site.OnlineStore.Controllers
 
         IBannerService _bannerService = new BannerService();
         ICMSNewsService _cmsNewsService = new CMSNewsService();
+        IDisplayProjectService _projectService = new DisplayProjectService();
 
         #endregion
 
@@ -23,6 +24,7 @@ namespace Site.OnlineStore.Controllers
         {
             _bannerService = new BannerService();
             _cmsNewsService = new CMSNewsService();
+            _projectService = new DisplayProjectService();
         }
 
         #endregion
@@ -31,6 +33,7 @@ namespace Site.OnlineStore.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.FeaturedProjects = _projectService.GetFeaturedProjects(6).ToList();
             return View();
         }
 

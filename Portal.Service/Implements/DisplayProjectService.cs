@@ -65,6 +65,41 @@ namespace Portal.Service.Implements
         }
 
         /// <summary>
+        /// Get list project with conditions except selected project
+        /// </summary>
+        /// <param name="projectId">selected project id</param>
+        /// <param name="request">conditions for filter</param>
+        /// <returns>list project matching with conditions</returns>
+        private IEnumerable<portal_Projects> GetRelatedProjects(int projectId,GetProjectWithConditionsRequest request)
+        {
+            var searchQuery = PredicateBuilder.True<portal_Projects>();
+
+            if (request.ProjectType != null)
+            {
+                searchQuery = searchQuery.And(p => p.Type == (int)request.ProjectType);
+            }
+            if (request.Region != null)
+            {
+                searchQuery = searchQuery.And(p => p.Region == (int)request.Region);
+            }
+            if (request.ProgressStatus != null)
+            {
+                searchQuery = searchQuery.And(p => p.ProgressStatus == (int)request.ProgressStatus);
+            }
+            if (request.SearchString != null && request.SearchString != string.Empty)
+            {
+                searchQuery = searchQuery.And(p => p.Name.Contains(request.SearchString));
+            }
+
+            searchQuery = searchQuery.And(p => p.Id != projectId);
+
+            IEnumerable<portal_Projects> projectsMatchingRefinement = db.Get(
+                filter: searchQuery, includeProperties: "share_Images,cms_News,CoverImage");
+
+            return projectsMatchingRefinement.ToList();
+        }
+
+        /// <summary>
         /// Crop list project result to satisfy current page
         /// </summary>
         /// <param name="productsFound">list project need to paging</param>
@@ -112,6 +147,37 @@ namespace Portal.Service.Implements
         public Model.Context.portal_Projects GetDetailProject(int? projectId)
         {
             return db.GetProjectById((int)projectId);
+        }
+
+        public IEnumerable<Model.Context.portal_Projects> GetRelatedProject(int? projectId)
+        {
+            try
+            {
+                var project = db.GetProjectById((int)projectId);
+                if (project == null)
+                {
+                    return null;
+                }
+
+                GetProjectWithConditionsRequest request = new GetProjectWithConditionsRequest()
+                {
+                    ProgressStatus = project.ProgressStatus,
+                    ProjectType = project.Type,
+                    Region = project.Region
+                };
+
+                return GetRelatedProjects((int)projectId, request).Take(3);
+            }
+            catch (Exception ex)
+            {
+                return null;
+                // Log exceptions
+            }
+        }
+
+        public IEnumerable<portal_Projects> GetFeaturedProjects(int takenNumber)
+        {
+            return db.GetFeaturedProjects(takenNumber);
         }
 
         #endregion

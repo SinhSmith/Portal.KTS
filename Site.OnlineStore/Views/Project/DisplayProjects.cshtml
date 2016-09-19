@@ -3,214 +3,77 @@
 @model IPagedList<Portal.Model.Context.portal_Projects>
 @{
     ViewBag.Title = "Dự án";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_ProjectLayout.cshtml";
 }
 
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="breadcrumb" vocab="http://rdf.data-vocabulary.org/#"><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="http://www.coteccons.vn/"><i class="glyphicon glyphicon-home"></i> Trang chủ</a></span> / <span class="current">Dự án</span></div>
-                <!--
-                <ol class="breadcrumb">
-                  <li><i class="glyphicon glyphicon-home"></i> <a href="#">Trang chủ</a></li>
-                  <li><a href="#">Tin tức</a></li>
-                  <li class="active">Thông tin công ty</li>
-                </ol>
-                -->
+@section Breadcrumb{
+    <span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="~/Home/Index"><i class="glyphicon glyphicon-home"></i> Trang chủ</a></span> / <span class="current">Dự án</span>
+}
+
+@section ContentPage{
+    <div class="custom-project-list">
+        <div class="title os-tuyendart w3danima">
+            <div class="fleft">
+                <h3 style="color:#062245;">@ViewBag.Category</h3>
             </div>
+            <br clear="all">
+        </div>
+        @if (Model.Count() > 0)
+        {
+            foreach (var project in Model)
+            {
+                <div class="col-xs-12 col-sm-6 col-md-4 project-box">
+                    <div class="pic">
+                        <a href="~/Project/ProjectDetails/@project.Id" title="@project.Name">
+                            @if (project.CoverImage != null)
+                            {
+                                <img class="pic-image" src="@project.CoverImage.ImagePath" alt="@project.Name">
+                            }
+                            else
+                            {
+                                <img class="pic-image" src="" alt="@project.Name">
+                            }
+                        </a>
+                    </div>
+                    <h5><a href="~/Project/ProjectDetails/@project.Id">@project.Name</a></h5>
+                    <h6><a href="~/Project/ProjectDetails/@project.Id">Xem thêm</a></h6>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-xs-12 col-sm-12 col-md-12">Không có dữ liệu</div>
+        }
+        <br clear="all">
+        <div class="row" id="pagination">
+            @switch ((Portal.Infractructure.Utility.Define.CategoryType)ViewBag.CategoryType)
+            {
+                case Portal.Infractructure.Utility.Define.CategoryType.All:
+                    {
+                        @Html.PagedListPager(Model, page => Url.Action("Index", "Project", new { ViewBag.CategoryValue, keyword = Request.QueryString["keyword"], page }));
+                                                                                                                                                      break;
+                    }
+                case Portal.Infractructure.Utility.Define.CategoryType.ProgressStatus:
+                    {
+                        @Html.PagedListPager(Model, page => Url.Action("GetProjectByProgressStatus", "Project", new { progressStatus = ViewBag.CategoryValue, keyword = Request.QueryString["keyword"], page }));
+                                                                                                                                                                                            break;
+                    }
+                case Portal.Infractructure.Utility.Define.CategoryType.Region:
+                    {
+                        @Html.PagedListPager(Model, page => Url.Action("GetProjectByRegion", "Project", new { region = ViewBag.CategoryValue, keyword = Request.QueryString["keyword"], page }));
+                                                                                                                                                                            break;
+                    }
+                case Portal.Infractructure.Utility.Define.CategoryType.ProjectType:
+                    {
+                        @Html.PagedListPager(Model, page => Url.Action("GetProjectByType", "Project", new { type = ViewBag.CategoryValue, keyword = Request.QueryString["keyword"], page }));
+                                                                                                                                                                        break;
+                    }
+            }
         </div>
     </div>
-</section>
-<section class="project">
-    <div class="container">
-        <div class="row custom-project-list">
-            <div class="col-xs-12 col-sm-9 col-md-9">
+}
 
-                <div class="title os-tuyendart w3danima">
-                    <div class="fleft">
-                        <h3 style="color:#062245;">@ViewBag.Category</h3>
-                    </div>
-                    <br clear="all">
-                </div>
-
-                
-                @foreach (var project in Model)
-                {
-                    <div class="col-xs-12 col-sm-6 col-md-4 project-box">
-                        <div class="pic">
-                            <a href="/Project/Details/@project.Id" title="@project.Name">
-                                @if (project.CoverImage != null)
-                                {
-                                    <img class="pic-image" src="@project.CoverImage.ImagePath" alt="@project.Name">
-                                }
-                                else
-                                {
-                                    <img class="pic-image" src="" alt="@project.Name">
-                                }
-                            </a>
-                        </div>
-                        <h5><a href="/Project/Details/@project.Id">@project.Name</a></h5>
-                        <h6><a href="/Project/Details/@project.Id">Xem thêm</a></h6>
-                    </div>
-                }
-                <br clear="all">
-                <div class="row" id="pagination">
-                        @switch ((Portal.Infractructure.Utility.Define.CategoryType)ViewBag.CategoryType)
-                        {
-                            case Portal.Infractructure.Utility.Define.CategoryType.All:
-                                {
-                                    @Html.PagedListPager(Model, page => Url.Action("Index", "Project", new { ViewBag.CategoryValue, page, keyword = Request.QueryString["keyword"] }));
-                                                                                                                                                            break;
-                                }
-                            case Portal.Infractructure.Utility.Define.CategoryType.ProgressStatus:
-                                {
-                                    @Html.PagedListPager(Model, page => Url.Action("GetProjectByProgressStatus", "Project", new { ViewBag.CategoryValue, page, keyword = Request.QueryString["keyword"] }));
-                                                                                                                                                                                                          break;
-                                }
-                            case Portal.Infractructure.Utility.Define.CategoryType.Region:
-                                {
-                                    @Html.PagedListPager(Model, page => Url.Action("GetProjectByRegion", "Project", new { ViewBag.CategoryValue, page, keyword = Request.QueryString["keyword"] }));
-                                                                                                                                                                                                  break;
-                                }
-                            case Portal.Infractructure.Utility.Define.CategoryType.ProjectType:
-                                {
-                                    @Html.PagedListPager(Model, page => Url.Action("GetProjectByType", "Project", new {type = ViewBag.CategoryValue, page, keyword = Request.QueryString["keyword"] }));
-                                                                                                                                                                                                break;
-                                }
-                        }
-
-                   
-
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-3 col-md-3">
-
-                <div class="box">
-
-                    <div class="title3 os-tuyendart w3danima">
-                        <div class="fleft">
-                            <h3 style="color:#062245;">Dự án</h3>
-                        </div>
-                        <br clear="all">
-                    </div>
-                    <div class="boxlink">
-
-                        <h1 class="page-heading "><span class="h-title">Theo dự án</span></h1>
-                        <div class="boxlink ">
-                            <ul>
-                                <li>
-                                    » <a href="http://www.coteccons.vn/du-an/category/thiet-ke-va-thi-cong/">Thiết kế và thi công</a>
-                                </li>
-                                <li>
-                                    » <a href="http://www.coteccons.vn/du-an/category/dan-dung/">Dân dụng</a>
-                                </li>
-                                <li>
-                                    » <a href="http://www.coteccons.vn/du-an/category/cong-nghiep/">Công Nghiệp</a>
-                                </li>
-                                <li>
-                                    » <a href="http://www.coteccons.vn/du-an/category/ha-tang/">Hạ tầng</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <h1 class="page-heading "><span class="h-title">Theo năm</span></h1>
-                        <div class="boxlink sort_years">
-                            <ul>
-                                <li>
-                                    » <a href="http://www.coteccons.vn/du-an/?y=2016">2016</a>
-                                </li>
-                                <li>
-                                    » <a href="http://www.coteccons.vn/du-an/?y=2015">2015</a>
-                                </li>
-                                <li>
-                                    » <a href="http://www.coteccons.vn/du-an/?y=2014">2014</a>
-                                </li>
-                                <li>
-                                    » <a href="http://www.coteccons.vn/du-an/?y=2013">2013</a>
-                                </li>
-                                <li>
-                                    » <a href="http://www.coteccons.vn/du-an/?y=2012">2012</a>
-                                </li>
-                                <li>
-                                    » <a href="http://www.coteccons.vn/du-an/?y=2011">2011</a>
-                                </li>
-                                <li style="display: none;">
-                                    » <a href="http://www.coteccons.vn/du-an/?y=2010">2010</a>
-                                </li>
-                                <li style="display: none;">
-                                    » <a href="http://www.coteccons.vn/du-an/?y=2009">2009</a>
-                                </li>
-                                <li style="display: none;">
-                                    » <a href="http://www.coteccons.vn/du-an/?y=2008">2008</a>
-                                </li>
-                                <li style="display: none;">
-                                    » <a href="http://www.coteccons.vn/du-an/?y=2007">2007</a>
-                                </li>
-                                <li style="display: none;">
-                                    » <a href="http://www.coteccons.vn/du-an/?y=2006">2006</a>
-                                </li>
-                                <li style="display: none;">
-                                    » <a href="http://www.coteccons.vn/du-an/?y=2005">2005</a>
-                                </li>
-                                <li style="display: none;">
-                                    » <a href="http://www.coteccons.vn/du-an/?y=2004">2004</a>
-                                </li>
-                                <li style="display: none;">
-                                    » <a href="http://www.coteccons.vn/du-an/?y=2003">2003</a>
-                                </li>
-                                <li class="mn_custom_sub"><a href="javascript:void(0);">Xem thêm...</a></li>
-                            </ul>
-                        </div>
-                        <h1 class="page-heading "><span class="h-title">Theo tiến độ</span></h1>
-                        <div class="boxlink ">
-                            <ul>
-                                <li>
-                                    » <a href="http://www.coteccons.vn/du-an/category/da-thi-cong/">Đã thi công</a>
-                                </li>
-                                <li>
-                                    » <a href="http://www.coteccons.vn/du-an/category/dang-thi-cong/">Đang thi công</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <h1 class="page-heading "><span class="h-title">Theo vị trí</span></h1>
-                        <div class="boxlink ">
-                            <ul>
-                                <li>
-                                    » <a href="http://www.coteccons.vn/du-an/category/mien-bac/">Miền Bắc</a>
-                                </li>
-                                <li>
-                                    » <a href="http://www.coteccons.vn/du-an/category/mien-nam/">Miền Nam</a>
-                                </li>
-                                <li>
-                                    » <a href="http://www.coteccons.vn/du-an/category/mien-trung/">Miền Trung</a>
-                                </li>
-                                <li>
-                                    » <a href="http://www.coteccons.vn/du-an/category/ngoai-nuoc/">Ngoài nước</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!--
-                <div class="title3 os-tuyendart w3danima">
-                    <div class="fleft">
-                        <h3 style="color:#062245;">Tin thị trường</h3>
-                    </div>
-                    <br clear="all">
-                </div>
-                -->
-
-            </div>
-        </div>
-    </div>
-
-</section>
-
-
-@section LocalScripts{
+@section CustomScripts{
     <script src="~/Scripts/home/footer-not-homepage.js"></script>
-    <script type="text/javascript">
-        var read_more = "Xem thêm";
-    </script>
     <script src="~/Scripts/home/custom-footer.js"></script>
 }

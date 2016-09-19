@@ -49,6 +49,11 @@ namespace Portal.Model.Repository
             return dbSet.Include("share_Images").Include("CoverImage").Where(c => c.Id == id && c.Status != (int)Define.Status.Delete).FirstOrDefault();
         }
 
+        public IEnumerable<portal_Projects> GetFeaturedProjects(int takenNumber)
+        {
+            return dbSet.Include("CoverImage").Where(c => c.Status != (int)Define.Status.Delete).OrderBy(p => p.SortOrder).Take(takenNumber).ToList();
+        }
+
         #endregion
     }
 }

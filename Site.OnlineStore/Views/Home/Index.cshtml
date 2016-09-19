@@ -17,11 +17,6 @@
                             </div>
                         </div>
                     </div>
-                    <!--
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    </ol> -->
-
                 </div><!-- /carousel -->
             </div>
         </div>
@@ -37,10 +32,10 @@
                     </div>
                     <div class="fright">
                         <ul id="filters" class="clearfix">
-                            <li><a href="http://www.coteccons.vn/du-an/category/thiet-ke-va-thi-cong/"><span>Thiết kế và thi công</span></a></li>
-                            <li><a href="http://www.coteccons.vn/du-an/category/dan-dung/"><span>Dân dụng</span></a></li>
-                            <li><a href="http://www.coteccons.vn/du-an/category/cong-nghiep/"><span>Công Nghiệp</span></a></li>
-                            <li><a href="http://www.coteccons.vn/du-an/category/ha-tang/"><span>Hạ tầng</span></a></li>
+                            <li style="margin-right:10px;">@Html.ActionLink("Thiết kế và thi công", "GetProjectByType", "Project", new { type = (int)Portal.Infractructure.Utility.Define.ProjectType.DesignAndConstruction},null)</li>
+                            <li style="margin-right:10px;">@Html.ActionLink("Dân dụng", "GetProjectByType", "Project", new { type = (int)Portal.Infractructure.Utility.Define.ProjectType.CivilEngineering }, null)</li>
+                            <li style="margin-right:10px;">@Html.ActionLink("Công Nghiệp", "GetProjectByType", "Project", new { type = (int)Portal.Infractructure.Utility.Define.ProjectType.Industry }, null)</li>
+                            <li style="margin-right:10px;">@Html.ActionLink("Hạ tầng", "GetProjectByType", "Project", new { type = (int)Portal.Infractructure.Utility.Define.ProjectType.Infrastructure }, null)</li>
                         </ul>
                     </div>
                     <br clear="all">
@@ -48,92 +43,25 @@
             </div>
             <div class="col-xs-12">
                 <div id="portfoliolist" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
-                    <div class="owl-wrapper-outer">
-                        <div class="owl-wrapper" style="width: 2280px; left: 0px; display: block;">
-                            <div class="owl-item" style="width: 228px;">
-                                <div class="item">
-                                    <div class="portfolio-wrapper pic">
-                                        <a href="http://www.coteccons.vn/du-an/landmark-81/"><img class="pic-image" src="~/Content/Images/Temp/Landmark81-2-1-592x437.jpg" alt="The Landmark 81"></a>
-                                        <div>
-                                            <br>
-                                            <div>
-                                                <a href="http://www.coteccons.vn/du-an/landmark-81/" class="text-title" style="font-weight:bold;">The Landmark 81</a>
-                                            </div>
-                                            <div style="font-size:11px;">
-                                                <p>*81 tầng,&nbsp;chiều cao 461m</p>
-                                                <p>*Top 10 tòa nhà cao nhất thế giới</p>
-                                            </div>
-                                        </div>
+                    @foreach (var project in ViewBag.FeaturedProjects)
+                    {
+                        <div class="item">
+                            <div class="portfolio-wrapper pic">
+                                <a href="~/Project/ProjectDetails/@project.Id">
+                                    <img class="pic-image" src=@project.CoverImage.ImagePath alt="The Landmark 81">
+                                </a>
+                                <div>
+                                    <br>
+                                    <div>
+                                        <a href="~/Project/ProjectDetails/@project.Id" class="text-title" style="font-weight:bold;">@project.Name</a>
                                     </div>
-                                </div>
-                            </div><div class="owl-item" style="width: 228px;">
-                                <div class="item">
-                                    <div class="portfolio-wrapper pic">
-                                        <a href="http://www.coteccons.vn/du-an/the-gold-view/"><img class="pic-image" src="~/Content/Images/Temp/goldview-1-300x222.jpg" alt="The GoldView"></a>
-                                        <div>
-                                            <br>
-                                            <div>
-                                                <a href="http://www.coteccons.vn/du-an/the-gold-view/" class="text-title" style="font-weight:bold;">The GoldView</a>
-                                            </div>
-                                            <div style="font-size:11px;">
-                                                <p>*Dự án thiết kế &amp; thi công quy mô lớn.&nbsp;</p>
-                                                <p>*Hợp đồng: 3.000 tỷ đồng.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="owl-item" style="width: 228px;">
-                                <div class="item">
-                                    <div class="portfolio-wrapper pic">
-                                        <a href="http://www.coteccons.vn/du-an/goldmark-city/"><img class="pic-image" src="~/Content/Images/Temp/ctc-goldmark-city-cover-583x437.jpg" alt="Goldmark City"></a>
-                                        <div>
-                                            <br>
-                                            <div>
-                                                <a href="http://www.coteccons.vn/du-an/goldmark-city/" class="text-title" style="font-weight:bold;">Goldmark City</a>
-                                            </div>
-                                            <div style="font-size:11px;">
-                                                <p>*Dự án dân dụng quy mô lớn.&nbsp;</p>
-                                                <p>*Hợp đồng:&nbsp;4.800&nbsp;tỷ đồng</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="owl-item" style="width: 228px;">
-                                <div class="item">
-                                    <div class="portfolio-wrapper pic">
-                                        <a href="http://www.coteccons.vn/du-an/regina-miracle-international-vietnam/"><img class="pic-image" src="~/Content/Images/Temp/ctc_gardenia_phoicanh-260x172.jpg" alt="Regina Miracle International"></a>
-                                        <div>
-                                            <br>
-                                            <div>
-                                                <a href="http://www.coteccons.vn/du-an/regina-miracle-international-vietnam/" class="text-title" style="font-weight:bold;">Regina Miracle International</a>
-                                            </div>
-                                            <div style="font-size:11px;">
-                                                <p>*Dự án công nghiệp quy mô lớn.&nbsp;</p>
-                                                <p>*Hợp đồng:&nbsp;2.420&nbsp;tỷ đồng.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="owl-item" style="width: 228px;">
-                                <div class="item">
-                                    <div class="portfolio-wrapper pic">
-                                        <a href="http://www.coteccons.vn/du-an/masteri-thao-dien/"><img class="pic-image" src="~/Content/Images/Temp/ctc_masteri_052016_Thumb-1-592x437.jpg" alt="Masteri Thảo Điền"></a>
-                                        <div>
-                                            <br>
-                                            <div>
-                                                <a href="http://www.coteccons.vn/du-an/masteri-thao-dien/" class="text-title" style="font-weight:bold;">Masteri Thảo Điền</a>
-                                            </div>
-                                            <div style="font-size:11px;">
-                                                <p>*Dự án mega đầu tay theo mô hình D&amp;B.&nbsp;</p>
-                                                <p>*Hợp đồng 4.400&nbsp;tỷ đồng</p>
-                                            </div>
-                                        </div>
+                                    <div style="font-size:11px;">
+                                        @project.Description
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="owl-controls clickable" style="display: none;"><div class="owl-buttons"><div class="owl-prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div><div class="owl-next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div></div></div>
+                    }
                 </div>
             </div>
         </div>
@@ -344,73 +272,24 @@
                     <div class="title title-bg os-tuyendart w3danima">
                         <a href="http://www.coteccons.vn/du-an/" style="text-decoration: none;"><h3>Thông tin dự án</h3></a>
                     </div>
-                    <div class="media">
-                        <div class="media-left">
-                            <a href="http://www.coteccons.vn/du-an/vinhomes-gardenia/">
-                                <img class="media-object" src="~/Content/Images/Temp/ctc_gardenia_phoicanh-260x172.jpg" alt="">
-                            </a>
+                    @foreach (var project in ViewBag.FeaturedProjects)
+                    {
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="~/Project/ProjectDetails/@project.Id">
+                                    <img class="media-object" src=@project.CoverImage.ImagePath alt="">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <a href="~/Project/ProjectDetails/@project.Id">@project.Name</a>
+                                <div><p>@project.Address</p></div>
+                            </div>
                         </div>
-                        <div class="media-body">
-                            <a href="http://www.coteccons.vn/du-an/vinhomes-gardenia/">Vinhomes Gardenia</a>
-                            <div><p>Quận Nam Từ Liêm, Hà Nội</p></div>
-                        </div>
-                    </div><div class="media">
-                        <div class="media-left">
-                            <a href="http://www.coteccons.vn/du-an/khu-can-ho-cao-cap-dich-vu-nam-sai-gon/">
-                                <img class="media-object" src="~/Content/Images/Temp/ctd_namsaigon_1462949702-276x150.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <a href="http://www.coteccons.vn/du-an/khu-can-ho-cao-cap-dich-vu-nam-sai-gon/">Khu căn hộ cao cấp DV Nam Sài Gòn</a>
-                            <div><p>Quận 7, Tp. HCM</p></div>
-                        </div>
-                    </div><div class="media">
-                        <div class="media-left">
-                            <a href="http://www.coteccons.vn/du-an/hh01/">
-                                <img class="media-object" src="~/Content/Images/Temp/ctc_hh01_pc-200x172.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <a href="http://www.coteccons.vn/du-an/hh01/">Trung tâm TMDV và nhà ở HH01</a>
-                            <div><p>Quận Hà Đông, Hà Nội</p></div>
-                        </div>
-                    </div><div class="media">
-                        <div class="media-left">
-                            <a href="http://www.coteccons.vn/du-an/masteri-villas/">
-                                <img class="media-object" src="~/Content/Images/Temp/ctc_masteri_villas_h1-295x166.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <a href="http://www.coteccons.vn/du-an/masteri-villas/">Vinhomes Thăng Long</a>
-                            <div><p>Huyện&nbsp;Hoài Đức, Hà Nội</p></div>
-                        </div>
-                    </div><div class="media">
-                        <div class="media-left">
-                            <a href="http://www.coteccons.vn/du-an/chung-cu-cao-tang-ket-hop-trung-tam-thuong-mai-va-van-phong/">
-                                <img class="media-object" src="~/Content/Images/Temp/ctc_everrich_8_pc-275x172.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <a href="http://www.coteccons.vn/du-an/chung-cu-cao-tang-ket-hop-trung-tam-thuong-mai-va-van-phong/">Khu Căn hộ, TM &amp; VP (Everrich 8)</a>
-                            <div><p>Quận 4, Tp. HCM</p></div>
-                        </div>
-                    </div><div class="media">
-                        <div class="media-left">
-                            <a href="http://www.coteccons.vn/du-an/khu-dan-cu-phuong-phu-huu-lucasta/">
-                                <img class="media-object" src="~/Content/Images/Temp/ctc_lucasta_pc-218x172.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <a href="http://www.coteccons.vn/du-an/khu-dan-cu-phuong-phu-huu-lucasta/">Khu dân cư Lucasta</a>
-                            <div><p>Quận&nbsp;9, Tp. HCM</p></div>
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
             <!-- left col-md-4-->
-
         </div>
-
         <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="title os-tuyendart w3danima">
@@ -540,28 +419,32 @@
             display: table-cell;
             vertical-align: top;
         }
-        .media-left, .media>.pull-left {
+
+        .media-left, .media > .pull-left {
             padding-right: 10px;
         }
+
         .caret {
             border-top: 4px dashed;
         }
-         .nav a:hover .caret {
-            border-top-color:initial!important;
-            border-bottom-color: initial!important;
+
+        .nav a:hover .caret {
+            border-top-color: initial !important;
+            border-bottom-color: initial !important;
         }
-         .nav .caret {
-            border-top-color: initial!important;
-            border-bottom-color: initial!important;
+
+        .nav .caret {
+            border-top-color: initial !important;
+            border-bottom-color: initial !important;
         }
     </style>
 }
 
 @section LocalScripts{
-<script src="~/Scripts/home/footer-homepage.js"></script>
-<script type="text/javascript">
-    var read_more = "Xem thêm";
-</script>
-<script src="~/Scripts/home/custom-footer.js"></script>
+    <script src="~/Scripts/home/footer-homepage.js"></script>
+    <script type="text/javascript">
+        var read_more = "Xem thêm";
+    </script>
+    <script src="~/Scripts/home/custom-footer.js"></script>
 }
 

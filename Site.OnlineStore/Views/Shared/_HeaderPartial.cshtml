@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-3 col-md-2">
                 <div class="logo os-tuyendart w3danima">
-                    <a href="/Home/Index"><img src="/Content/Images/logo.png" alt="Logo CotecCons"></a>
+                    <a href="~/Home/Index"><img style="width:100px;" src="/Content/Images/Logo_TV_2015.png" alt="Company"></a>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-5 col-md-6">
@@ -17,8 +17,7 @@
             <div class="col-xs-12 col-sm-3 col-md-3">
                 <div class="search">
                     <div class="bsearch">
-
-                        <form role="search" method="get" class="search-form" action="http://www.coteccons.vn/">
+                        <form role="search" method="get" class="search-form" action="~/Home/Search">
                             <input type="search" class="input-sm" maxlength="64" placeholder="Tìm kiếm …" value="" name="s" title="Tìm kiếm">
                             <button type="submit" class="btn btn-primary btn-sm">Tìm kiếm</button>
                         </form>
@@ -44,29 +43,82 @@
                         </div>
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
-                                <li class="active "><a href="Home/Index">Trang chủ </a></li>
-                                <li class="dropdown "><a href="http://www.coteccons.vn/#" class="dropdown-toggle" data-toggle="dropdown">Giới thiệu <b class="caret"></b></a><ul class="dropdown-menu"><li class=""><a href="http://www.coteccons.vn/tong-quan-cong-ty/">Tổng quan công ty</a></li><li class=""><a href="http://www.coteccons.vn/can-bo-chu-chot/">Cán bộ chủ chốt</a></li><li class=""><a href="http://www.coteccons.vn/co-cau-to-chuc/">Cơ cấu tổ chức</a></li><li class=""><a href="http://www.coteccons.vn/thu-danh-gia/">Thư đánh giá</a></li><li class=""><a href="http://www.coteccons.vn/khach-hang-doi-tac/">Khách hàng và Đối tác</a></li><li class=""><a href="http://www.coteccons.vn/chung-chi-iso/">Chứng Chỉ ISO</a></li><li class=""><a href="http://www.coteccons.vn/an-toan-lao-dong/">Chính sách an toàn sức khỏe - nghề nghiệp và môi trường</a></li><li class=""><a href="http://www.coteccons.vn/chinh-sach-nhan-su/">Chính sách nhân sự</a></li><li class=""><a href="http://www.coteccons.vn/nang-luc-thiet-bi-thi-cong/">Năng lực thiết bị thi công</a></li><li class=""><a href="http://www.coteccons.vn/nhung-cai-tien-trong-co-cau-to-chuc/">Những cải tiến trong cơ cấu tổ chức</a></li></ul></li>
-                                <li class="dropdown "><a href="http://www.coteccons.vn/thong-tin/" class="dropdown-toggle" data-toggle="dropdown">Tin tức <b class="caret"></b></a><ul class="dropdown-menu"><li class=""><a href="/News/Index">Tin Công Ty</a></li><li class=""><a href="http://www.coteccons.vn/thong-tin/tin-cong-trinh/">Tin Công Trình</a></li><li class=""><a href="http://www.coteccons.vn/thong-tin/tin-doan-the/">Tin Đoàn thể</a></li><li class=""><a href="http://www.coteccons.vn/thong-tin/tin-thi-truong/">Tin Thị Trường</a></li><li class=""><a href="http://www.coteccons.vn/thong-tin/">Xem tất cả</a></li></ul></li>
-                                <li class="dropdown "><a href="http://www.coteccons.vn/quan-he-co-dong/" class="dropdown-toggle" data-toggle="dropdown">Quan hệ cổ đông <b class="caret"></b></a><ul class="dropdown-menu"><li class=""><a href="http://www.coteccons.vn/quan-he-co-dong/thong-tin-co-dong/">Thông tin Cổ đông</a></li><li class=""><a href="http://www.coteccons.vn/quan-he-co-dong/bao-cao-tai-chinh-thuong-nien/">Báo cáo tài chính - thường niên</a></li><li class=""><a href="http://www.coteccons.vn/quan-he-co-dong/bien-ban-nghi-quyet/">Biên bản và nghị quyết</a></li><li class=""><a href="http://www.coteccons.vn/quan-he-co-dong/dieu-le-quy-che-quy-dinh/">Điều lệ và quy chế qui định</a></li></ul></li>
+                                <li class="active "><a href="~/Home/Index">Trang chủ </a></li>
+                                <li class="dropdown ">
+                                    <a href="~/Home/About" class="dropdown-toggle" data-toggle="dropdown">Giới thiệu <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li class=""><a href="#">Tổng quan công ty</a></li>
+                                        <li class=""><a href="#">Cán bộ chủ chốt</a></li>
+                                        <li class=""><a href="#">Cơ cấu tổ chức</a></li>
+                                        <li class=""><a href="#">Thư đánh giá</a></li>
+                                        <li class=""><a href="#">Khách hàng và Đối tác</a></li>
+                                        <li class=""><a href="#">Chứng Chỉ ISO</a></li>
+                                        <li class=""><a href="#">Chính sách an toàn sức khỏe - nghề nghiệp và môi trường</a></li>
+                                        <li class=""><a href="#">Chính sách nhân sự</a></li>
+                                        <li class=""><a href="#">Năng lực thiết bị thi công</a></li>
+                                        <li class=""><a href="#">Những cải tiến trong cơ cấu tổ chức</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown "><a href="~/News/" class="dropdown-toggle" data-toggle="dropdown">Tin tức <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li class=""><a href="/News/Index">Tin Công Ty</a></li>
+                                        <li class=""><a href="#">Tin Công Trình</a></li>
+                                        <li class=""><a href="#">Tin Đoàn thể</a></li>
+                                        <li class=""><a href="#">Tin Thị Trường</a></li>
+                                        <li class=""><a href="#">Xem tất cả</a></li>
+                                    </ul>
+                                </li>
                                 <li class="dropdown mega-dropdown">
-                                    <a href="http://www.coteccons.vn/#" class="dropdown-toggle" data-toggle="dropdown">Dự án <b class="caret"></b></a><ul class="dropdown-menu mega-dropdown-menu row">
+                                    <a href="~/Project/Index" class="dropdown-toggle" data-toggle="dropdown">Dự án <b class="caret"></b></a>
+                                    <ul class="dropdown-menu mega-dropdown-menu row">
                                         <li class="col-sm-3">
-                                            <ul><li class="dropdown-header">Theo Dự Án</li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/thiet-ke-va-thi-cong/">Thiết kế và thi công</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/dan-dung/">Dân dụng</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/cong-nghiep/">Công Nghiệp</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/ha-tang/">Hạ tầng</a></li></ul>
+                                            <ul>
+                                                <li class="dropdown-header">Theo Dự Án</li>
+                                                <li class="mn_custom_sub">@Html.ActionLink("Thiết kế và thi công", "GetProjectByType", "Project", new { type = (int)Portal.Infractructure.Utility.Define.ProjectType.DesignAndConstruction },null)</li>
+                                                <li class="mn_custom_sub">@Html.ActionLink("Dân dụng", "GetProjectByType", "Project", new { type = (int)Portal.Infractructure.Utility.Define.ProjectType.CivilEngineering }, null)</li>
+                                                <li class="mn_custom_sub">@Html.ActionLink("Công nghiệp", "GetProjectByType", "Project", new { type = (int)Portal.Infractructure.Utility.Define.ProjectType.Industry }, null)</li>
+                                                <li class="mn_custom_sub">@Html.ActionLink("Hạ tầng", "GetProjectByType", "Project", new { type = (int)Portal.Infractructure.Utility.Define.ProjectType.Infrastructure }, null)</li>
+                                            </ul>
                                         </li>
                                         <li class="col-sm-3">
-                                            <ul><li class="dropdown-header">Theo Thời Gian</li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/?y=2016">2016</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/?y=2015">2015</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/?y=2014">2014</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/?y=2013">2013</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/?y=2012">2012</a></li><li class="mn_custom_sub" style="display: none;"><a href="http://www.coteccons.vn/du-an/?y=2011">2011</a></li><li class="mn_custom_sub" style="display: none;"><a href="http://www.coteccons.vn/du-an/?y=2010">2010</a></li><li class="mn_custom_sub" style="display: none;"><a href="http://www.coteccons.vn/du-an/?y=2009">2009</a></li><li class="mn_custom_sub" style="display: none;"><a href="http://www.coteccons.vn/du-an/?y=2008">2008</a></li><li class="mn_custom_sub" style="display: none;"><a href="http://www.coteccons.vn/du-an/?y=2007">2007</a></li><li class="mn_custom_sub" style="display: none;"><a href="http://www.coteccons.vn/du-an/?y=2006">2006</a></li><li class="mn_custom_sub" style="display: none;"><a href="http://www.coteccons.vn/du-an/?y=2005">2005</a></li><li class="mn_custom_sub" style="display: none;"><a href="http://www.coteccons.vn/du-an/?y=2004">2004</a></li><li class="mn_custom_sub" style="display: none;"><a href="http://www.coteccons.vn/du-an/?y=2003">2003</a></li><li class="mn_custom_sub"><a href="javascript:void(0);">Xem thêm...</a></li></ul>
+                                            <ul>
+                                                <li class="dropdown-header">Theo Thời Gian</li>
+                                                <li class="mn_custom_sub"><a href="#">2016</a></li>
+                                                <li class="mn_custom_sub"><a href="#">2015</a></li>
+                                                <li class="mn_custom_sub"><a href="#">2014</a></li>
+                                                <li class="mn_custom_sub"><a href="#">2013</a></li>
+                                                <li class="mn_custom_sub"><a href="#">2012</a></li>
+                                                <li class="mn_custom_sub" style="display: none;"><a href="#">2011</a></li>
+                                                <li class="mn_custom_sub" style="display: none;"><a href="#">2010</a></li>
+                                                <li class="mn_custom_sub" style="display: none;"><a href="#">2009</a></li>
+                                                <li class="mn_custom_sub" style="display: none;"><a href="#">2008</a></li>
+                                                <li class="mn_custom_sub" style="display: none;"><a href="#">2007</a></li>
+                                                <li class="mn_custom_sub" style="display: none;"><a href="#">2006</a></li>
+                                                <li class="mn_custom_sub" style="display: none;"><a href="#">2005</a></li>
+                                                <li class="mn_custom_sub" style="display: none;"><a href="#">2004</a></li>
+                                                <li class="mn_custom_sub" style="display: none;"><a href="#">2003</a></li>
+                                                <li class="mn_custom_sub"><a href="javascript:void(0);">Xem thêm...</a></li>
+                                            </ul>
                                         </li>
                                         <li class="col-sm-3">
-                                            <ul><li class="dropdown-header">Theo Vị Trí</li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/mien-bac/">Miền Bắc</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/mien-trung/">Miền Trung</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/mien-nam/">Miền Nam</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/ngoai-nuoc/">Ngoài nước</a></li></ul>
+                                            <ul>
+                                                <li class="dropdown-header">Theo Vị Trí</li>
+                                                <li class="mn_custom_sub">@Html.ActionLink("Miền Bắc", "GetProjectByRegion", "Project", new { region = (int)Portal.Infractructure.Utility.Define.Region.North }, null)</li>
+                                                <li class="mn_custom_sub">@Html.ActionLink("Miền Trung", "GetProjectByRegion", "Project", new { region = (int)Portal.Infractructure.Utility.Define.Region.Central }, null)</li>
+                                                <li class="mn_custom_sub">@Html.ActionLink("Miền Name", "GetProjectByRegion", "Project", new { region = (int)Portal.Infractructure.Utility.Define.Region.South }, null)</li>
+                                                <li class="mn_custom_sub">@Html.ActionLink("Nước ngoài", "GetProjectByRegion", "Project", new { region = (int)Portal.Infractructure.Utility.Define.Region.Foreign }, null)</li>
+                                            </ul>
                                         </li>
                                         <li class="col-sm-3">
-                                            <ul><li class="dropdown-header">Theo tiến độ</li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/da-thi-cong/">Đã thi công</a></li><li class="mn_custom_sub"><a href="http://www.coteccons.vn/du-an/category/dang-thi-cong/">Đang thi công</a></li></ul>
+                                            <ul>
+                                                <li class="dropdown-header">Theo tiến độ</li>
+                                                <li class="mn_custom_sub">@Html.ActionLink("Đã thi công", "GetProjectByProgressStatus", "Project", new { progressStatus = (int)Portal.Infractructure.Utility.Define.ProgressStatus.Completed }, null)</li>
+                                                <li class="mn_custom_sub">@Html.ActionLink("Đang thi công", "GetProjectByProgressStatus", "Project", new { progressStatus = (int)Portal.Infractructure.Utility.Define.ProgressStatus.InProgress }, null)</li>
+                                            </ul>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class=" "><a href="http://www.coteccons.vn/bat-dong-san/">Bất động sản </a></li>
-                                <li class=" "><a href="http://www.coteccons.vn/tai-lieu/">Tài liệu </a></li>
-                                <li class=" "><a href="http://www.coteccons.vn/tuyen-dung/">Tuyển dụng </a></li>
+                                <li class=" "><a href="#">Tuyển dụng </a></li>
                                 <li class=" "><a href="/Home/About">Liên hệ </a></li>
                             </ul>
                         </div>

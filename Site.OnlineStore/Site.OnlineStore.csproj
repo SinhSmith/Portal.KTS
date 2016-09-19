@@ -503,6 +503,9 @@
     <Content Include="Content\common.css" />
     <Content Include="Content\common\custom.css" />
     <Content Include="Content\common\frontend.css" />
+    <Content Include="Content\common\ie.css" />
+    <Content Include="Content\common\ie7.css" />
+    <Content Include="Content\common\ie8.css" />
     <Content Include="Content\common\owl.carousel.css" />
     <Content Include="Content\common\owl.theme.css" />
     <Content Include="Content\css\site.css" />
@@ -575,6 +578,7 @@
     <Content Include="Content\admin\html5shiv\3.7.2\html5shiv.min.js" />
     <Content Include="Content\home\main-layout.css" />
     <Content Include="Content\home\styles.css" />
+    <Content Include="Content\Images\ajax-loader.gif" />
     <Content Include="Content\Images\btn_top_off.png" />
     <Content Include="Content\Images\bx_loader.gif" />
     <Content Include="Content\Images\ctc_everrich_8_pc.jpg" />
@@ -1462,6 +1466,10 @@
     <Content Include="Content\admin\plugins\zoom-image\jquery.elevateZoom-3.0.8.min.js" />
     <Content Include="Content\admin\plugins\zoom-image\jquery.elevatezoom.js" />
     <Content Include="Content\admin\response\1.4.2\respond.min.js" />
+    <Content Include="Content\project\font-awesome.min.css" />
+    <Content Include="Content\project\jquery.desoslide.css" />
+    <Content Include="Content\project\prettyPhoto.css" />
+    <Content Include="Content\project\slideshow.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -1965,6 +1973,8 @@
     <Content Include="Library\ckeditor\skins\moono\readme.md" />
     <None Include="Properties\PublishProfiles\xaviadecor.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\common\html5.js" />
+    <Content Include="Scripts\common\html5shiv.min.js" />
     <Content Include="Scripts\home\chosen.jquery.min.js" />
     <Content Include="Scripts\home\custom-footer.js" />
     <Content Include="Scripts\home\footer-homepage.js" />
@@ -1993,6 +2003,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\project\display-project.js" />
+    <Content Include="Scripts\project\gallery.js" />
+    <Content Include="Scripts\project\jquery.prettyPhoto.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -2046,12 +2058,14 @@
     <Content Include="Content\img\contact-form.png" />
     <Content Include="Content\img\form-contact-shadow.png" />
     <Content Include="Content\img\sprite.png" />
+    <Content Include="Views\Chi tiet du an – Coteccons.html" />
     <Content Include="Views\Coteccons – Our Experience drives us forward.html" />
     <Content Include="Views\Danh sach du an – Coteccons.html" />
     <Content Include="Views\Liên hệ – Coteccons.html" />
     <Content Include="Views\Tin Công Ty – Coteccons.html" />
     <Content Include="Views\Tin tuc chi tiet – Coteccons.html" />
     <Content Include="Views\Tintuc – Coteccons.html" />
+    <Content Include="Views\Vinhomes Thăng Long – Coteccons.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -2111,6 +2125,8 @@
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\Home\BlogPartial.cshtml" />
     <Content Include="Views\Project\DisplayProjects.cshtml" />
+    <Content Include="Views\Project\ProjectDetails.cshtml" />
+    <Content Include="Views\Shared\_ProjectLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

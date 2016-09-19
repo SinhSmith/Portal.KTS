@@ -153,10 +153,13 @@ namespace Site.OnlineStore.Controllers
             }
 
             portal_Projects response = service.GetDetailProject(id);
-
-            return View("Details", response);
+            ViewBag.ProjectType = EnumHelper.GetDescriptionFromEnum((Define.ProjectType)response.Type);
+            ViewBag.Region = EnumHelper.GetDescriptionFromEnum((Define.Region)response.Region);
+            ViewBag.ProgressStatus = EnumHelper.GetDescriptionFromEnum((Define.ProgressStatus)response.ProgressStatus);
+            ViewBag.RelatedProjects = service.GetRelatedProject(id);
+            return View("ProjectDetails", response);
         }
-        
+
         #endregion
     }
 }
