@@ -97,5 +97,11 @@ namespace Portal.Infractructure.Utility
             ProjectType,
             ProgressStatus
         }
+
+        public enum SearchItemType
+        {
+            News,
+            Project
+        }
     }
 }

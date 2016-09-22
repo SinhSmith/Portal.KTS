@@ -1,4 +1,6 @@
-﻿using Portal.Service.Implements;
+﻿using PagedList;
+using Portal.Model.ViewModel;
+using Portal.Service.Implements;
 using Portal.Service.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -66,6 +68,14 @@ namespace Site.OnlineStore.Controllers
             return PartialView(_cmsNewsService.GetCMSNewsForHomePage());
         }
 
+        public ActionResult Search(string keyword = "",int? page = 1)
+        {
+            ViewBag.SearchString = keyword;
+            ViewBag.FeaturedProjects = _projectService.GetFeaturedProjects(6).ToList();
+            SearchResultResponse result = SeachData(keyword, page);
+            IPagedList<SearchResultViewModel> pageProjects = new StaticPagedList<SearchResultViewModel>(result.Items, (int)page, Portal.Infractructure.Utility.Define.DISPLAY_PROJECT_PAGE_SIZE, result.TotalItems);
+            return View("Search", pageProjects);
+        }
         #endregion
 
         #region Release resources

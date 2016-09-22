@@ -58,6 +58,7 @@
     <Compile Include="Implements\CMSCategoryExtensions.cs" />
     <Compile Include="Implements\CMSCategoryService.cs" />
     <Compile Include="Implements\CMSNewsService.cs" />
+    <Compile Include="Implements\CommonService.cs" />
     <Compile Include="Implements\DisplayProjectService.cs" />
     <Compile Include="Implements\MenuService.cs" />
     <Compile Include="Implements\ProfileService.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Interfaces\IBannerService.cs" />
     <Compile Include="Interfaces\ICMSCategoryService.cs" />
     <Compile Include="Interfaces\ICMSNewsService.cs" />
+    <Compile Include="Interfaces\ICommonService.cs" />
     <Compile Include="Interfaces\IDisplayProjectService.cs" />
     <Compile Include="Interfaces\IMenuService.cs" />
     <Compile Include="Interfaces\IProfileService.cs" />
